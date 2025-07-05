@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Management</title>
+    <style>
+        body {
+            background-color: #2E2E2E;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-box {
+            background-color: gray;
+            width: 500px;
+            margin: 100px auto;
+            padding: 30px;
+            border: 2px solid black;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #00000050;
+            text-align: center;
+        }
+
+        .main-box h1 {
+            color: black;
+            margin-bottom: 30px;
+        }
+
+        .option-box {
+            background-color: #e0e0e0;
+            border: 1px solid black;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px auto;
+            width: 80%;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .option-box a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .option-box:hover {
+            background-color: #d0d0d0;
+            transform: scale(1.02);
+            transition: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-box">
+        <h1>Employee Management</h1>
+
+        <div class="option-box">
+            <a href="/createPage">➕ Create Employee</a>
+        </div>
+        <div class="option-box">
+            <a href="/searchPage">🔍 Search Employee</a>
+        </div>
+        <div class="option-box">
+            <a href="/updatePage">✏️ Update Employee</a>
+        </div>
+        <div class="option-box">
+            <a href="/deletePage">🗑️ Delete Employee</a>
+        </div>
+         <div class="option-box">
+         <a href="/list">📋 List Of All Employees</a>
+         </div>  
+    </div>
+</body>
+</html>

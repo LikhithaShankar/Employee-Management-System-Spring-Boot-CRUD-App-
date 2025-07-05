@@ -1,0 +1,116 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Search Employee</title>
+	</head>
+	<body>
+		<h3>Fill employee info:</h3>
+		<form action = "search" >
+			<label>Employee ID:</label>
+			<input type = "text" name = "id">
+			<br><br>
+			<input type = "submit" value = "SEARCH EMPLOYEE">
+		</form>
+	</body>
+</html>
+ -->
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search Employee</title>
+    <style>
+        body {
+            background-color:  #2E2E2E;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: gray;
+            padding: 30px;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            color: black;
+        }
+
+        label, input {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+            color: black;
+            width: 100%;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .message {
+            color: green;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .employee-details {
+            background-color: white;
+            padding: 10px;
+            margin-top: 15px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .employee-details p {
+            margin: 5px 0;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Search Employee</h2>
+
+        <!-- Success or Error Messages -->
+        <div class="message" th:if="${message}" th:text="${message}"></div>
+        <div class="error" th:if="${error}" th:text="${error}"></div>
+
+        <!-- Search Form -->
+        <form th:action="@{/search}" method="get">
+            <label for="id">Employee ID:</label>
+            <input type="number" id="id" name="id" required />
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Show employee info if found -->
+        <div class="employee-details" th:if="${employee != null}">
+            <p><strong>ID:</strong> <span th:text="${employee.id}"></span></p>
+            <p><strong>Name:</strong> <span th:text="${employee.name}"></span></p>
+            <p><strong>Department:</strong> <span th:text="${employee.department}"></span></p>
+            <p><strong>Salary:</strong> <span th:text="${employee.salary}"></span></p>
+        </div>
+    </div>
+</body>
+</html>
+ 

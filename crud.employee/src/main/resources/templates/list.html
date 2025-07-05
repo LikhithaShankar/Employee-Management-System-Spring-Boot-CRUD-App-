@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Employees</title>
+    <style>
+        body {
+            background-color: #2E2E2E;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .table-container {
+            background-color: gray;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 50px auto;
+            width: 80%;
+        }
+        h2 {
+            text-align: center;
+            color: black;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f2f2f2;
+            color: black;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <h2>List of All Employees</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Salary</th>
+            </tr>
+            <tr th:each="emp : ${employees}">
+                <td th:text="${emp.id}">1</td>
+                <td th:text="${emp.name}">John</td>
+                <td th:text="${emp.department}">IT</td>
+                <td th:text="${emp.salary}">50000</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

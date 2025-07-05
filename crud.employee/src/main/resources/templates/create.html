@@ -1,0 +1,83 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Create new Employee</title>
+		
+	</head>
+	<body>
+		<h3>Fill employee info:</h3>
+		<form action = "create" method = "post">
+			<label>Employee ID:</label>
+			<input type = "text" name = "id">
+			<br><br>
+			<label>Employee Name:</label>
+			<input type = "text" name = "name">
+			<br><br>
+			<label>Employee Department:</label>
+			<input type = "text" name = "department">
+			<br><br>
+			<label>Employee Salary:</label>
+			<input type = "text" name = "salary">
+			<br><br>
+			<input type = "submit" value = "ADD EMPLOYEE">
+		</form>
+	</body>
+</html>
+ -->
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Employee</title>
+    
+    <style>
+        body {
+            background-color:  #2E2E2E;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        form {
+            background-color: gray;
+            border: 2px solid black;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+            width: 300px;
+        }
+        label, input {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            margin-top: 15px;
+            background-color: black;
+            color: white;
+            padding: 8px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="/create">
+    <h2>Create Employee</h2>
+    <div th:if="${message}" style="color: green;"><p th:text="${message}"></p></div>
+    <div th:if="${error}" style="color: red;"><p th:text="${error}"></p></div>
+    <label>ID:</label>
+    <input type="text" name="id" required>
+    <label>Name:</label>
+    <input type="text" name="name" required>
+    <label>Department:</label>
+    <input type="text" name="department" required>
+    <label>Salary:</label>
+    <input type="text" name="salary" required>
+    <input type="submit" value="Create">
+</form>
+</body>
+</html>
+ 

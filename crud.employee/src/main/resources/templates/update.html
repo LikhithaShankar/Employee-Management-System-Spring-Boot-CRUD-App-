@@ -1,0 +1,79 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Update Employee</title>
+	</head>
+	<body>
+		<h3>Fill employee info:</h3>
+		<form action = "update" method = "post">
+			<label>Employee ID:</label>
+			<input type = "text" name = "id">
+			<br><br>
+			<label>Employee Name:</label>
+			<input type = "text" name = "name">
+			<br><br>
+			<label>Employee Department:</label>
+			<input type = "text" name = "department">
+			<br><br>
+			<label>Employee Salary:</label>
+			<input type = "text" name = "salary">
+			<br><br>
+			<input type = "submit" value = "UPDATE EMPLOYEE">
+		</form>
+	</body>
+</html>
+ -->
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Employee</title>
+    <style>
+        body {
+            background-color:  #2E2E2E;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        form {
+            background-color: gray;
+            border: 2px solid black;
+            padding: 25px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 0 10px black;
+        }
+        label, input {
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+        }
+        input[type="submit"] {
+            background-color: black;
+            color: white;
+            padding: 8px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="/update">
+    <h2>Update Employee</h2>
+    <div th:if="${message}" style="color: green;"><p th:text="${message}"></p></div>
+    <div th:if="${error}" style="color: red;"><p th:text="${error}"></p></div>
+    <label>ID:</label>
+    <input type="text" name="id" required>
+    <label>Name:</label>
+    <input type="text" name="name">
+     <label>Department:</label>
+    <input type="text" name="department" required>
+    <label>Salary:</label>
+    <input type="text" name="salary">
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>
+ 
